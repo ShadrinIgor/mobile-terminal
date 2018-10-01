@@ -3,7 +3,7 @@ import {BodyOutputType, ToasterConfig} from 'angular2-toaster';
 
 @Component({
   selector: 'app-root',
-  template: '1<toaster-container [toasterconfig]="toasterconfig"></toaster-container>2<router-outlet></router-outlet>'
+  template: '<toaster-container [toasterconfig]="toasterconfig"></toaster-container><router-outlet></router-outlet>'
 })
 export class AppComponent {
   title = 'app';

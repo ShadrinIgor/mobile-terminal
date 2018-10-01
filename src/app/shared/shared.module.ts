@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
     CommonModule,
     SharedRoutingModule
   ],
-  declarations: [HeaderComponent, FooterComponent]
+  declarations: [HeaderComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent]
 })
 export class SharedModule { }
