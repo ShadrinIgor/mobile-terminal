@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LaddaModule} from 'angular2-ladda';
+import {RouterModule} from '@angular/router';
+import {NgReduxModule} from '@angular-redux/store';
 
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormErrorsComponent} from './components/form-errors/form-errors.component';
-import {LaddaModule} from 'angular2-ladda';
-import {ToasterModule} from 'angular2-toaster';
-import { OperatorCardComponent } from './components/operator-card/operator-card.component';
-import {RouterModule} from '@angular/router';
+import {OperatorCardComponent} from './components/operator-card/operator-card.component';
 
 @NgModule({
   imports: [
@@ -16,7 +16,8 @@ import {RouterModule} from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     LaddaModule,
-    RouterModule
+    RouterModule,
+    NgReduxModule
   ],
   declarations: [
     HeaderComponent,
@@ -33,7 +34,8 @@ import {RouterModule} from '@angular/router';
     FormErrorsComponent,
     LaddaModule,
     OperatorCardComponent,
-    RouterModule
+    RouterModule,
+    NgReduxModule
   ]
 })
 export class SharedModule {

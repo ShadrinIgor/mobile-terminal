@@ -12,7 +12,8 @@
           formControlName="phone"
           [ngClass]="{'form-control-error': form.get('phone').touched && form.get('phone').errors}"
         >
-        <app-form-errors *ngIf="form.get('phone').touched && form.get('phone').errors" field="phone" [errors]="form.get('phone').errors"></app-form-errors>
+        <app-form-errors *ngIf="form.get('phone').touched && form.get('phone').errors" field="phone"
+                         [errors]="form.get('phone').errors"></app-form-errors>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput">Amoun</label>
@@ -23,21 +24,25 @@
           formControlName="value"
           [ngClass]="{'form-control-error': form.get('value').touched && form.get('value').errors}"
         >
-        <app-form-errors *ngIf="form.get('value').touched && form.get('value').errors" field="value"  [errors]="form.get('value').errors"></app-form-errors>
+        <app-form-errors *ngIf="form.get('value').touched && form.get('value').errors" field="value"
+                         [errors]="form.get('value').errors"></app-form-errors>
       </div>
       <div class="form-group text-center">
         <button
           type="button"
           class="btn btn-info btn-md"
           routerLink="/system"
-        >Back</button>
+        >Back
+        </button>
         <button
           type="submit"
           class="btn btn-success btn-md"
           [disabled]="form.invalid"
-        >Send amount</button>
+        >Send amount
+        </button>
       </div>
     </form>
   </div>
 </div>
+{{listOperations|async|json}}
 <app-footer></app-footer>

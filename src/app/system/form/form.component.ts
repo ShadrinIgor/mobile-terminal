@@ -3,10 +3,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {ToasterService} from 'angular2-toaster';
+import * as moment from 'moment';
+import {select} from '@angular-redux/store';
 
 import {OperatorModel} from '../../shared/models/operator.model';
 import constants from '../../constants';
 import {common} from '../../i18n/en';
+import {Actions} from '../../shared/store/actions/actions';
+import {Observable} from 'rxjs/Observable';
+import {PayModel} from '../../shared/models/pay.model';
 
 @Component({
   selector: 'app-form',
@@ -18,9 +23,12 @@ export class FormComponent implements OnInit, OnDestroy {
   operator: OperatorModel;
   subs: Subscription[] = [];
 
+  @select() readonly listOperations: Observable<PayModel[]>;
+
   constructor(private route: ActivatedRoute,
               private toaster: ToasterService,
               private router: Router,
+              private actions: Actions,
               private zone: NgZone) {
   }
 
@@ -60,6 +68,11 @@ export class FormComponent implements OnInit, OnDestroy {
       this.emulateSave((res) => {
         this.zone.run(() => {
           if (res === 200) {
+            this.actions.addPayment({
+              ...this.form.value,
+              operatorId: this.operator.id,
+              date: moment().unix()
+            });
             this.router.navigate(['/system']);
           }
         });

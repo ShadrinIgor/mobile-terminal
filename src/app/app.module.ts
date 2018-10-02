@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import {LaddaModule} from 'angular2-ladda';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DevToolsExtension, NgRedux} from '@angular-redux/store';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -10,6 +11,7 @@ import {AuthModule} from './auth/auth.module';
 import {SharedModule} from './shared/shared.module';
 import {AuthService} from './shared/services/auth.service';
 import {LocalStoreService} from './shared/services/localStore.service';
+import {IAppState, INITIAL_STATE, rootReducer} from './shared/store/reducer/reducers';
 
 @NgModule({
   declarations: [
@@ -32,4 +34,12 @@ import {LocalStoreService} from './shared/services/localStore.service';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(ngRedux: NgRedux<IAppState>,
+              devTools: DevToolsExtension) {
+    ngRedux.configureStore(
+      rootReducer,
+      INITIAL_STATE,
+      null,
+      devTools.isEnabled() ? [devTools.enhancer()] : []);
+  }
 }
