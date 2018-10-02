@@ -14,7 +14,6 @@ export class SystemComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    console.log('ngOnInit', this.auth.isLogin());
     if (!this.auth.isLogin()) {
       this.router.navigate(['/login']);
     }
