@@ -1,0 +1,23 @@
+<div class="container" *ngIf="(listOperations|async).length">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-10">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title text-center">History of payments</h5>
+        </div>
+        <div class="card-body text-center">
+          <div
+            class="row"
+            *ngFor="let item of listOperations|async;let num = index"
+            [ngClass]="{'border-top': num}"
+          >
+            <div class="col-3">{{dateFormat(item.date)}}</div>
+            <div class="col-3">{{getOperatorTitle(item.operatorId)}}</div>
+            <div class="col-3">{{item.value}}</div>
+            <div class="col-3">{{item.phone}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

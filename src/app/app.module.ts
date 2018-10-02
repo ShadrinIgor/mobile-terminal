@@ -12,6 +12,7 @@ import {SharedModule} from './shared/shared.module';
 import {AuthService} from './shared/services/auth.service';
 import {LocalStoreService} from './shared/services/localStore.service';
 import {IAppState, INITIAL_STATE, rootReducer} from './shared/store/reducer/reducers';
+import {Actions} from './shared/store/actions/actions';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {IAppState, INITIAL_STATE, rootReducer} from './shared/store/reducer/redu
   providers: [
     ToasterService,
     AuthService,
-    LocalStoreService
+    LocalStoreService,
+    Actions
   ],
   bootstrap: [AppComponent]
 })

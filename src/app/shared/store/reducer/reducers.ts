@@ -15,18 +15,8 @@ export const INITIAL_STATE: IAppState = {
 
 export function rootReducer(state: IAppState = INITIAL_STATE, action: any) {
   switch (action.type) {
-    case Actions.OPERATOR_ADD_REQUESTED :
-      return {...state, loading: false};
-    case Actions.OPERATOR_ADD_SUCCESS :
-      return {...state, loading: false, paymentData: action.data};
-    case Actions.OPERATOR_ADD_FAILURE :
-      return {...state, loading: false};
-    case Actions.OPERATOR_GET_REQUESTED :
-      return {...state, loading: false};
-    case Actions.OPERATOR_GET_SUCCESS :
-      return {...state, loading: false, listOperations: action.data};
-    case Actions.OPERATOR_GET_FAILURE :
-      return {...state, loading: false};
+    case Actions.PAYMENT_ADD:
+      return {...state, loading: false, listOperations: [...state.listOperations, action.data]};
     default:
       return state;
   }

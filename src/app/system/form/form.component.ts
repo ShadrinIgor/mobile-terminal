@@ -67,12 +67,12 @@ export class FormComponent implements OnInit, OnDestroy {
     this.zone.runOutsideAngular(() => {
       this.emulateSave((res) => {
         this.zone.run(() => {
+          this.actions.addPayment({
+            ...this.form.value,
+            operatorId: this.operator.id,
+            date: moment().unix()
+          });
           if (res === 200) {
-            this.actions.addPayment({
-              ...this.form.value,
-              operatorId: this.operator.id,
-              date: moment().unix()
-            });
             this.router.navigate(['/system']);
           }
         });
