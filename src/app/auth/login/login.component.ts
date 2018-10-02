@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ToasterService} from 'angular2-toaster';
+
+import {common} from '../../i18n/en';
+import {AuthService} from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +12,10 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  isLoading = false;
 
-  constructor() {
+  constructor(private toasterService: ToasterService,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -19,7 +25,25 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  subminForm() {
+  submitForm() {
+    if (!this.form.invalid) {
 
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+        let message;
+        let typeMessage;
+
+        if (this.authService.login({email: this.form['email'], passsword: this.form['password']})) {
+          message = common.login_success;
+          typeMessage = 'success';
+        } else {
+          message = common.login_error;
+          typeMessage = 'error';
+        }
+
+        this.toasterService.pop(typeMessage, message);
+      }, 1000);
+    }
   }
 }

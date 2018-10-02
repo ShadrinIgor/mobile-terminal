@@ -5,12 +5,15 @@ import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormErrorsComponent} from './components/form-errors/form-errors.component';
+import {LaddaModule} from 'angular2-ladda';
+import {ToasterModule} from 'angular2-toaster';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    LaddaModule
   ],
   declarations: [
     HeaderComponent,
@@ -22,7 +25,8 @@ import {FormErrorsComponent} from './components/form-errors/form-errors.componen
     FormsModule,
     HeaderComponent,
     FooterComponent,
-    FormErrorsComponent
+    FormErrorsComponent,
+    LaddaModule
   ]
 })
 export class SharedModule {

@@ -1,6 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
+import {LaddaModule} from 'angular2-ladda';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -14,11 +16,13 @@ import {LocalStoreService} from './shared/services/localStore.service';
     AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     ToasterModule,
     AppRoutingModule,
     AuthModule,
-    SharedModule
+    SharedModule,
+    LaddaModule.forRoot({style: 'zoom-out'}),
   ],
   providers: [
     ToasterService,
