@@ -4,6 +4,7 @@ import {ToasterService} from 'angular2-toaster';
 
 import {common} from '../../i18n/en';
 import {AuthService} from '../../shared/services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   isLoading = false;
 
   constructor(private toasterService: ToasterService,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -31,18 +33,13 @@ export class LoginComponent implements OnInit {
       this.isLoading = true;
       setTimeout(() => {
         this.isLoading = false;
-        let message;
-        let typeMessage;
 
-        if (this.authService.login({email: this.form['email'], passsword: this.form['password']})) {
-          message = common.login_success;
-          typeMessage = 'success';
+        if (this.authService.login({email: this.form.value['email'], password: this.form.value['password']})) {
+          this.toasterService.pop('success', common.login_success);
+          this.router.navigate(['/system']);
         } else {
-          message = common.login_error;
-          typeMessage = 'error';
+          this.toasterService.pop('error', common.login_error);
         }
-
-        this.toasterService.pop(typeMessage, message);
       }, 1000);
     }
   }

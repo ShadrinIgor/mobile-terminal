@@ -5,7 +5,11 @@ const routes: Routes = [{
   path: 'system',
   loadChildren: 'app/system/system.module#SystemModule'
 },
-  {path: '', redirectTo: 'login', pathMatch: 'full'}
+  {
+    path: 'login',
+    loadChildren: 'app/auth/auth.module#AuthModule'
+  },
+  {path: '', redirectTo: 'system', pathMatch: 'full'}
 ];
 
 const config: ExtraOptions = {

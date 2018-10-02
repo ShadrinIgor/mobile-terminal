@@ -2,14 +2,15 @@ import constants from '../../constants';
 
 export class LocalStoreService {
   saveData({token, expiredTime}): boolean {
-    window.localStorage.setItem(constants.tokenKey, token);
-    window.localStorage.setItem(constants.tokenExpiredKey, expiredTime);
+    console.log('saveData', token, expiredTime);
+    localStorage.setItem(constants.tokenKey, token);
+    localStorage.setItem(constants.tokenExpiredKey, expiredTime);
     return true;
   }
 
-  getData(): { token: number, expiredTime: number } {
-    const token = +window.localStorage.getItem(constants.tokenKey);
-    const expiredTime = +window.localStorage.getItem(constants.tokenExpiredKey);
+  getData(): { token: string, expiredTime: number } {
+    const token = localStorage.getItem(constants.tokenKey);
+    const expiredTime = +localStorage.getItem(constants.tokenExpiredKey);
     return {
       token,
       expiredTime
