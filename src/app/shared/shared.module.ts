@@ -8,13 +8,15 @@ import {FormErrorsComponent} from './components/form-errors/form-errors.componen
 import {LaddaModule} from 'angular2-ladda';
 import {ToasterModule} from 'angular2-toaster';
 import { OperatorCardComponent } from './components/operator-card/operator-card.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    LaddaModule
+    LaddaModule,
+    RouterModule
   ],
   declarations: [
     HeaderComponent,
@@ -23,13 +25,15 @@ import { OperatorCardComponent } from './components/operator-card/operator-card.
     OperatorCardComponent
   ],
   exports: [
+    CommonModule,
     ReactiveFormsModule,
     FormsModule,
     HeaderComponent,
     FooterComponent,
     FormErrorsComponent,
     LaddaModule,
-    OperatorCardComponent
+    OperatorCardComponent,
+    RouterModule
   ]
 })
 export class SharedModule {

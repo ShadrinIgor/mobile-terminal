@@ -1,9 +1,8 @@
 <div class="card">
   <img *ngIf="operator.image" class="card-img-top h-200" [src]="operator.image" alt="Card image cap">
-  <div class="card-body">
+  <div class="card-body text-center">
     <h5 class="card-title">{{operator.title}}</h5>
-    <p class="card-text operator-text">{{operator.text}}</p>
-    <a href="#" class="btn btn-primary">Open</a>
+    <a [routerLink]="['/system', 'form', operator.id]" class="btn btn-primary text-white">Open</a>
   </div>
 </div>
 

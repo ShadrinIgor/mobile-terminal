@@ -4,7 +4,6 @@ import {OperatorModel} from '../../models/operator.model';
 @Component({
   selector: 'app-operator-card',
   templateUrl: './operator-card.component.html',
-  styleUrls: ['./operator-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OperatorCardComponent {

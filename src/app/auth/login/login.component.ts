@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
   }
 
   getErrors(errors: any): any {
-    console.log('errors', errors, {...errors} === {...errors});
     return errors;
   }
 }
