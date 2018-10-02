@@ -1,7 +1,7 @@
 export default {
   admin: {
-    login: 'admin@gmail.com',
-    password: '123456'
+    login: 'shadrin.igor@gmail.com',
+    password: '6223772'
   },
   tokenKey: 'APP_TOKEN_KEY',
   tokenExpiredKey: 'APP_TOKEN_EXPIRED',

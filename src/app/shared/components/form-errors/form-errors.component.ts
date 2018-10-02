@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 import formError from '../../../i18n/en/form.errors';
 
@@ -9,7 +9,6 @@ import formError from '../../../i18n/en/form.errors';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormErrorsComponent {
-
   @Input() errors = {};
 
   parseErrors() {

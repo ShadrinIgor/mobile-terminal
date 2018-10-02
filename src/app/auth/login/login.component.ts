@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.toasterService.pop('error', common.login_error);
         }
-      }, 1000);
+      }, 500);
     }
   }
 

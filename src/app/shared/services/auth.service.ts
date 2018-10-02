@@ -25,6 +25,13 @@ export class AuthService {
   }
 
   /***
+   * loginOut function(emulate)
+   */
+  logOut(): void {
+    this.localStore.clear();
+  }
+
+  /***
    * Get Expired Time for token
    */
   getExpiredTime(): number {
