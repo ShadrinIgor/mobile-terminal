@@ -1,5 +1,5 @@
 <div class="list list__errors">
-  <p *ngFor="let error of listErrors;trackBy: error">
-    {{error}}
-  </p>
+  <ng-container *ngFor="let error of parseErrors(errors);trackBy: error;let num = index">
+    {{num ? ', ' : ''}}{{error}}
+  </ng-container>
 </div>

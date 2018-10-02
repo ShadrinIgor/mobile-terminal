@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
   isLoading = false;
+  _Object;
 
   constructor(private toasterService: ToasterService,
               private authService: AuthService,
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required])
     });
+    this._Object = Object;
   }
 
   submitForm() {
@@ -42,5 +44,10 @@ export class LoginComponent implements OnInit {
         }
       }, 1000);
     }
+  }
+
+  getErrors(errors: any): any {
+    console.log('errors', errors, {...errors} === {...errors});
+    return errors;
   }
 }

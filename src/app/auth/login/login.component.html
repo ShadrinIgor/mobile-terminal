@@ -15,7 +15,7 @@
               formControlName="email"
               [ngClass]="{'form-control-error': form.get('email').touched && form.get('email').errors}"
             >
-            <app-form-errors *ngIf="form.get('email').touched && form.get('email').errors" [errors]="form.get('email').errors"></app-form-errors>
+            <app-form-errors *ngIf="form.get('email').touched && form.get('email').errors" [errors]="getErrors(form.get('email').errors)"></app-form-errors>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput2">Password</label>
@@ -27,7 +27,7 @@
               formControlName="password"
               [ngClass]="{'form-control-error': form.get('password').touched && form.get('password').errors}"
             >
-            <app-form-errors *ngIf="form.get('password').touched && form.get('password').errors" [errors]="form.get('password').errors"></app-form-errors>
+            <app-form-errors *ngIf="form.get('password').touched && form.get('password').errors" [errors]="getErrors(form.get('password').errors)"></app-form-errors>
           </div>
           <div class="form-group text-right">
             <button

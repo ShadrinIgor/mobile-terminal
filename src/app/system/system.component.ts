@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {AuthService} from '../shared/services/auth.service';
@@ -6,6 +6,7 @@ import {AuthService} from '../shared/services/auth.service';
 @Component({
   selector: 'app-system',
   template: '<router-outlet></router-outlet>',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SystemComponent implements OnInit {
 
@@ -13,7 +14,7 @@ export class SystemComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    console.log('ngOnInit');
+    console.log('ngOnInit', this.auth.isLogin());
     if (!this.auth.isLogin()) {
       this.router.navigate(['/login']);
     }

@@ -4,6 +4,9 @@ import * as moment from 'moment';
 import constants from '../../constants';
 import {LocalStoreService} from './localStore.service';
 
+/***
+ * Service for user's authorization
+ */
 @Injectable()
 export class AuthService {
   constructor(private localStore: LocalStoreService) {
@@ -45,5 +48,4 @@ export class AuthService {
      */
     return !!tokenData.token;
   }
-
 }
