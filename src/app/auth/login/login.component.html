@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row justify-content-center align-items-center">
-    <form class="col-6">
+    <form [formGroup]="form" (submit)="subminForm()" class="col-6">
       <div class="card">
         <div class="card-header">
           Login
@@ -8,11 +8,29 @@
         <div class="card-body">
           <div class="form-group">
             <label for="formGroupExampleInput">Email</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="email">
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput" placeholder="email"
+              formControlName="email"
+              [ngClass]="{'form-control-error': form.get('email').touched && form.get('email').errors}"
+            >
+            <app-form-errors *ngIf="form.get('email').touched && form.get('email').errors" [errors]="form.get('email').errors"></app-form-errors>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput2">Password</label>
-            <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="password">
+            <input
+              type="password"
+              class="form-control"
+              id="formGroupExampleInput2"
+              placeholder="password"
+              formControlName="password"
+              [ngClass]="{'form-control-error': form.get('password').touched && form.get('password').errors}"
+            >
+            <app-form-errors *ngIf="form.get('password').touched && form.get('password').errors" [errors]="form.get('password').errors"></app-form-errors>
+          </div>
+          <div class="form-group text-right">
+            <button type="submit" class="btn btn-success" [disabled]="form.hasError">Войти</button>
           </div>
         </div>
       </div>

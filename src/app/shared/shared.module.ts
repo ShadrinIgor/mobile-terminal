@@ -1,16 +1,29 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { SharedRoutingModule } from './shared-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormErrorsComponent} from './components/form-errors/form-errors.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedRoutingModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  declarations: [HeaderComponent, FooterComponent],
-  exports: [HeaderComponent, FooterComponent]
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    FormErrorsComponent
+  ],
+  exports: [
+    ReactiveFormsModule,
+    FormsModule,
+    HeaderComponent,
+    FooterComponent,
+    FormErrorsComponent
+  ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
