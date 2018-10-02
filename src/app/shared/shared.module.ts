@@ -7,6 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormErrorsComponent} from './components/form-errors/form-errors.component';
 import {LaddaModule} from 'angular2-ladda';
 import {ToasterModule} from 'angular2-toaster';
+import { OperatorCardComponent } from './components/operator-card/operator-card.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {ToasterModule} from 'angular2-toaster';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    FormErrorsComponent
+    FormErrorsComponent,
+    OperatorCardComponent
   ],
   exports: [
     ReactiveFormsModule,
@@ -26,7 +28,8 @@ import {ToasterModule} from 'angular2-toaster';
     HeaderComponent,
     FooterComponent,
     FormErrorsComponent,
-    LaddaModule
+    LaddaModule,
+    OperatorCardComponent
   ]
 })
 export class SharedModule {
