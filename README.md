@@ -1,4 +1,4 @@
-# Stek
+# Stack
 - Angular 5
 
 # Public link
