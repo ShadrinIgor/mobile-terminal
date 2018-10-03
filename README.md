@@ -23,3 +23,36 @@ For authorization need use:
 Email: admin@gmail.com
 Pass: 123456
 ~~~
+
+
+# Refactoring
+## Variant 1 with a minimum of lines
+~~~
+function func(s, a, b) {
+  let i= (s && s.length) ? s.length-1 : -1, aIndex=-1, bIndex=-1;
+  while ((aIndex === -1) && (bIndex === -1) && (i > 0)) {
+    if (s[n] === a) aIndex=n;
+    if (s[n] === b) bIndex=n;
+    i --;
+  }
+  return (aIndex !== -1) ? (bIndex === -1) ? aIndex : Math.max(aIndex, bIndex) : (bIndex !== -1) ? bIndex : -1;   
+};
+~~~
+
+## Optimal variant
+~~~
+function func(s, a, b) {
+  if (!s || !s.length) {
+    return -1;
+  }
+  let i= s.length-1;
+  let aIndex=-1;
+  let bIndex=-1;
+  while ((aIndex === -1) && (bIndex === -1) && (i > 0)) {
+    if (s[n] === a) aIndex=n;
+    if (s[n] === b) bIndex=n;
+    i --;
+  }
+  return (aIndex !== -1) ? (bIndex === -1) ? aIndex : Math.max(aIndex, bIndex) : (bIndex !== -1) ? bIndex : -1;   
+};
+~~~
