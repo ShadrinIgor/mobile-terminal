@@ -1,5 +1,8 @@
-# Stek
+# Stack
 - Angular 5
+
+# Public link
+[http://mterminal.world-travel.uz](http://mterminal.world-travel.uz)
 
 ## Basic dependencies
 - @angular-redux/store
@@ -14,7 +17,7 @@
 - Use zone.runOutsideAngular for optimization (Suppose this operation is very expensive and we do not need to render the component until we finish)
 
 ## Description
-For authorization need useghb:
+For authorization need use:
 ~~~
 // it was necessary to save the data in constants as in this project, because have't of connecting to the database
 Email: admin@gmail.com
