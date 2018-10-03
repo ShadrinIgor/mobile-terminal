@@ -6,7 +6,7 @@ const routes: Routes = [{
   loadChildren: 'app/system/system.module#SystemModule'
 },
   {
-    path: 'login',
+    path: 'auth',
     loadChildren: 'app/auth/auth.module#AuthModule'
   },
   {path: '', redirectTo: 'system', pathMatch: 'full'}
