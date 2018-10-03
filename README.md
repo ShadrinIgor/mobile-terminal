@@ -10,7 +10,17 @@ Angular 5
 ## Tasty moments
 - Change changeDetect strategy for optimization
 - Use redux for save history of payments
+- Use i18n for saving the text informtion about errors
 - Use zone.runOutsideAngular for optimisation (Suppose this operation is very expensive and we do not need to render the component until we finish)
+
+## Description
+For authorization need use:
+~~~
+Email: admin@gmail.com
+Pass: 123456
+~~~
+
+----------------------
 
 # ModileTerminal
 
