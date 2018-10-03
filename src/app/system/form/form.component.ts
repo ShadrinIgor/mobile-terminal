@@ -37,7 +37,7 @@ export class FormComponent implements OnInit, OnDestroy {
     const valueNumber = '^([0-9]*)$';
     this.form = new FormGroup({
       'phone': new FormControl(null, [Validators.required, Validators.pattern(phoneNumber)]),
-      'value': new FormControl('1', [Validators.required, Validators.pattern(valueNumber), Validators.min(1), Validators.max(300)])
+      'value': new FormControl('1', [Validators.required, Validators.pattern(valueNumber), Validators.min(1), Validators.max(1000)])
     });
 
     const sub = this.route.params
