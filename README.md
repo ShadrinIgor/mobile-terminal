@@ -11,7 +11,7 @@
 - angular2-ladda
 
 ## Tasty moments
-- Change changeDetect strategy for optimization
+- Use changeDetect strategy for optimization
 - Use redux for save history of payments
 - Use i18n for saving the text information about errors
 - Use zone.runOutsideAngular for optimization (Suppose this operation is very expensive and we do not need to render the component until we finish)
