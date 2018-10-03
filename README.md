@@ -1,6 +1,9 @@
 # Stek
 - Angular 5
 
+# Public link
+[http://mterminal.world-travel.uz](http://mterminal.world-travel.uz)
+
 ## Basic dependencies
 - @angular-redux/store
 - bootstrap
