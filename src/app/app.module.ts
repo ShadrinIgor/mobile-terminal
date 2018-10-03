@@ -4,6 +4,7 @@ import {ToasterModule, ToasterService} from 'angular2-toaster';
 import {LaddaModule} from 'angular2-ladda';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DevToolsExtension, NgRedux} from '@angular-redux/store';
+import {APP_BASE_HREF} from '@angular/common';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -28,6 +29,7 @@ import {Actions} from './shared/store/actions/actions';
     LaddaModule.forRoot({style: 'zoom-out'}),
   ],
   providers: [
+    {provide: APP_BASE_HREF, useValue: '/'},
     ToasterService,
     AuthService,
     LocalStoreService,
