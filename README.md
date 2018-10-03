@@ -1,3 +1,17 @@
+# Stek
+Angular 5
+
+## Basic dependencies
+- @angular-redux/store
+- bootstrap
+- angular2-toaster
+- angular2-ladda
+
+## Tasty moments
+- Change changeDetect strategy for optimization
+- Use redux for save history of payments
+- Use zone.runOutsideAngular for optimisation (Suppose this operation is very expensive and we do not need to render the component until we finish)
+
 # ModileTerminal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
